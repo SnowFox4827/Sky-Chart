@@ -21,7 +21,7 @@
   // build SOLAR_DATA from data/solar-system.json — same [N,Nrate,i,irate,w,wrate,a,e,erate,M,Mrate] arrays
   SOLAR_DATA = SOLAR_RAW.bodies.map(p => {
     const el = p.elements;
-    return { name:p.name, col:p.color, H:p.absolute_magnitude_H,
+    return { name:p.name, col:p.color, H:p.absolute_magnitude_H, facts:p.facts || [],
       el:[el.N.value, el.N.rate_per_day, el.i.value, el.i.rate_per_day,
           el.w.value, el.w.rate_per_day, el.a_AU,
           el.e.value, el.e.rate_per_day, el.M.value, el.M.rate_per_day] };
